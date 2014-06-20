@@ -66,7 +66,7 @@ public class Utils {
 		try { 
 			String sCurrentLine; 
 			String flightSystemsHome  = System.getenv("FlightSystems_Home");
-			br = new BufferedReader(new FileReader(flightSystemsHome + "\\user-files\\user-inputs.txt")); 
+			br = new BufferedReader(new FileReader(flightSystemsHome + "\\FlightSystem\\user-files\\user-inputs.txt")); 
 			while ((sCurrentLine = br.readLine()) != null) {
 				
 				if(sCurrentLine.contains("DataFile=")){
