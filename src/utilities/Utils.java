@@ -70,7 +70,7 @@ public class Utils {
 			while ((sCurrentLine = br.readLine()) != null) {
 				
 				if(sCurrentLine.contains("DataFile=")){
-					userFeedMap.put("DataFile", sCurrentLine.substring("DataFile===".length()-2).trim());
+					userFeedMap.put("DataFile", sCurrentLine.substring("DataFile=".length()).trim());
 				}else if (sCurrentLine.contains("FromNode---ToNode=")){
 					String str = sCurrentLine.substring("FromNode---ToNode=".length());
 					String [] strs = str.split("---");
@@ -79,6 +79,9 @@ public class Utils {
 						list = list + strs[0].trim() + "-" + strs[1].trim() + ";";
 						userFeedMap.put("queriesList",list);
 					}				
+				}else if (sCurrentLine.contains("Graph-Style=")){
+					userFeedMap.put("Graph-Style",sCurrentLine.substring("Graph-Style=".length()).trim());
+					
 				}
 			}
  

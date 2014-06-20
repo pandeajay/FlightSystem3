@@ -1,9 +1,14 @@
 package business.impl;
 
 import graphs.Graph;
+import graphs.impl.Jgraph;
+import graphs.impl.NeoGraph;
+import graphs.impl.NeoGraphRest;
 
 import java.util.List;
 import java.util.Map;
+
+import org.jgraph.JGraph;
 
 import utilities.Utils;
 import business.Edge;
@@ -14,11 +19,21 @@ public class GraphBuilderImpl implements GraphBuilder {
 	
 	private Graph graph = null;
 
-	public boolean initialize(Graph userGraph) throws Exception{
+	public boolean initialize() throws Exception{
+		
 		if(this.graph != null){			
 			throw new Exception ("Graph already initialized");
 		}
-		this.graph  = userGraph;
+		
+		String graphStyle = Utils.getDataNodesFile().get("Graph-Style");
+		if(graphStyle.equals("NeoGraph")){
+			this.graph  = new NeoGraph();
+		}else if(graphStyle.equals("NeoGraphREST")){
+			this.graph  = new NeoGraphRest();
+		}else if(graphStyle.equals("JGraph")){
+			this.graph  = new Jgraph();
+		}
+		
 		return true;		
 	}
 
@@ -74,5 +89,10 @@ public class GraphBuilderImpl implements GraphBuilder {
 		this.graph.close();
 		this.graph = null;
 		
+	}
+
+	@Override
+	public Graph getGraph() {
+		return this.graph;
 	}
 }

@@ -21,13 +21,12 @@ public class MainNeoGraph {
 
 	private void start() {
 		try {
-			GraphBuilderImpl graphBuilder = new GraphBuilderImpl();		
-			Graph graph  = new NeoGraph();
-			graphBuilder.initialize(graph);
+			GraphBuilderImpl graphBuilder = new GraphBuilderImpl();					
+			graphBuilder.initialize();
 			graphBuilder.buildGraph();
 			
 			GraphQueryImpl query = new GraphQueryImpl();
-			query.initialize(graph);
+			query.initialize(graphBuilder.getGraph());
 			
 			Map<String, String> userInputMap = Utils.getDataNodesFile();			
 			List<String> queryList = Utils.getFromAndToList(userInputMap);

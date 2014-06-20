@@ -12,10 +12,11 @@ import graphs.Graph;
  *
  */
 public interface GraphBuilder {
-	public boolean initialize(Graph userGraph) throws Exception ;
+	public boolean initialize() throws Exception ;
 	public void buildGraph();
 	public void addNode(Node node );	
 	public void createEdgesForNode(Node node );
 	public void deleteNode(String nodeId );
+	public Graph getGraph();
 	public void close();
 }
