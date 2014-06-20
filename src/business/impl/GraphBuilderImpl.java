@@ -20,6 +20,7 @@ public class GraphBuilderImpl implements GraphBuilder {
 	
 	private Graph graph = null;
 	Logger logger = new Logger();
+	logger.init();
 
 	public boolean initialize() throws Exception{
 		
