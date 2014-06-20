@@ -42,7 +42,7 @@ public class GraphTests {
 		//graph = new Jgraph();
 		//graph = new MyGraph();
 		String flightSystemsHome  = System.getenv("FlightSystems_Home");
-		pathForInputFile = flightSystemsHome + "\\user-files\\test.json";
+		pathForInputFile = flightSystemsHome + "\\FlightSystem\\user-files\\test.json";
 		newNodesList = Utils.getAllNodesFromJson(pathForInputFile);
 	}
 
