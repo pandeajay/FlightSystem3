@@ -1,6 +1,9 @@
 //Data Nodes Path
 DataFile=C:\Users\apande\Documents\FlightSystems-2\FlightSystem\user-files\nodes.json
 
+//Graph options are NeoGraph, NeoGraphREST, JGraph
+graph-style=NeoGraph
+
 
 //Queries:from and to destinations
 FromNode---ToNode=  1 --- 4
