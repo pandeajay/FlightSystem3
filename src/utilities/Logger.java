@@ -4,6 +4,9 @@ public class Logger {
 	private static java.util.logging.Logger logWriter = null;
 	
 	static void init(java.util.logging.Logger logr){
+		if(logWriter != null){
+			return ;
+		}
 		if(logr == null){
 			logWriter = java.util.logging.Logger.getLogger(Logger.class.getName());
 		}else{

@@ -10,6 +10,7 @@ import java.util.Map;
 
 import org.jgraph.JGraph;
 
+import utilities.Logger;
 import utilities.Utils;
 import business.Edge;
 import business.GraphBuilder;
@@ -18,6 +19,7 @@ import business.Node;
 public class GraphBuilderImpl implements GraphBuilder {
 	
 	private Graph graph = null;
+	Logger logger = new Logger();
 
 	public boolean initialize() throws Exception{
 		
