@@ -5,48 +5,37 @@ import log.Log;
 public class Logger {
 	
 	private static Logger logger = null;
-	private Log logWriter = null;
-	
-
+	private static Log logWriter = null;
 	
 	private Logger(){
 		
 	}
 	
-	public static Logger getLogger(){
+	public static Logger getLogger(Log log){
 		if(logger == null){
 			logger = new Logger();
+			logWriter = log;
 		}
 		return logger;	
-	}
-	
-	
-	static void init(java.util.logging.Logger logr){
-		if(logWriter != null){
-			return ;
-		}
-		if(logr == null){
-			logWriter = java.util.logging.Logger.getLogger(Logger.class.getName());
-		}else{
-			Logger.logWriter = logr;
-		}
-	}
-	static void fine(String msg){		
-		Logger.logWriter.fine(msg);
 	}	
-	static void info(String msg){
-		Logger.logWriter.info(msg);
+
+	public void fine(String msg){		
+		logWriter.fine(msg);
+	}	
+	
+	public void info(String msg){
+		logWriter.info(msg);
 	}
-	static void config(String msg){
-		Logger.logWriter.config(msg);
+	public void config(String msg){
+		logWriter.config(msg);
 	}
-	static void finer(String msg){
-		Logger.logWriter.finer(msg);
+	public void finer(String msg){
+		logWriter.finer(msg);
 	}
-	static void finest(String msg){
-		Logger.logWriter.finest(msg);
+	public void finest(String msg){
+		logWriter.finest(msg);
 	}
-	static void warning(String msg){
-		Logger.logWriter.warning(msg);
+	public void warning(String msg){
+		logWriter.warning(msg);
 	}
 }

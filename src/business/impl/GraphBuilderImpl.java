@@ -8,6 +8,8 @@ import graphs.impl.NeoGraphRest;
 import java.util.List;
 import java.util.Map;
 
+import log.impl.LogImpl;
+
 import org.jgraph.JGraph;
 
 import utilities.Logger;
@@ -18,12 +20,11 @@ import business.Node;
 
 public class GraphBuilderImpl implements GraphBuilder {
 	
-	private Graph graph = null;
-	Logger logger = new Logger();
-	logger.init();
+	private Graph graph = null;	
+	private Logger logger = Logger.getLogger(new LogImpl());
 
-	public boolean initialize() throws Exception{
-		
+	public boolean initialize() throws Exception{			
+		logger.fine("Intializing GraphBuilderImpl ...");		
 		if(this.graph != null){			
 			throw new Exception ("Graph already initialized");
 		}
@@ -37,6 +38,7 @@ public class GraphBuilderImpl implements GraphBuilder {
 			this.graph  = new Jgraph();
 		}
 		
+		logger.fine("Intialized GraphBuilderImpl ...");		
 		return true;		
 	}
 
