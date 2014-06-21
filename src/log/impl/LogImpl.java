@@ -3,10 +3,12 @@ package log.impl;
 import log.Log;
 
 public class LogImpl implements Log {
-	private static java.util.logging.Logger logWriter = java.util.logging.Logger.getLogger(LogImpl.class.getName());	
+	private static java.util.logging.Logger logWriter = java.util.logging.Logger.getLogger(LogImpl.class.getName());
+	
 
 	@Override
 	public void fine(String msg) {
+		
 		logWriter.fine(msg);		
 	}
 

@@ -25,6 +25,7 @@ public class GraphBuilderImpl implements GraphBuilder {
 
 	public boolean initialize() throws Exception{			
 		logger.fine("Intializing GraphBuilderImpl ...");		
+		
 		if(this.graph != null){			
 			throw new Exception ("Graph already initialized");
 		}
@@ -36,34 +37,35 @@ public class GraphBuilderImpl implements GraphBuilder {
 			this.graph  = new NeoGraphRest();
 		}else if(graphStyle.equals("JGraph")){
 			this.graph  = new Jgraph();
-		}
+		}		
 		
-		logger.fine("Intialized GraphBuilderImpl ...");		
+		logger.fine("Intialized GraphBuilderImpl.");		
 		return true;		
 	}
 
 	@Override
 	public void buildGraph() {
 		try{
+			logger.fine("Buidling Graph...");	
 			Map<String, String> userInputMap = Utils.getDataNodesFile();		
 			String nodesDataPath = userInputMap.get("DataFile");
 			List<Node> newNodesList = Utils.getAllNodesFromJson(nodesDataPath);				
 			graph.addNodes(newNodesList);
 			graph.addEdges(newNodesList);
 		}catch(Exception ex){
-			
+			logger.warning("Error in buidling graph. Error : " + ex);	
 		}		
 	}
 
 	@Override
 	public void addNode(Node node) {
 		try{
+			logger.fine("Adding node " + node.getNodeId() + "...");	
 			graph.addNode(node);
-			
+			logger.fine("Added a node " + node.getNodeId());				
 		}catch(Exception ex){
-			
-		}	
-		
+			logger.warning("Error in buidling graph. Error : " + ex);				
+		}			
 	}
 
 
@@ -71,10 +73,12 @@ public class GraphBuilderImpl implements GraphBuilder {
 	@Override
 	public void createEdgesForNode(Node node) {
 		try{
+			logger.fine("Creating edges for a node " + node.getNodeId() + " ...");	
 			graph.addEdge(node);
+			logger.fine("Created edges for a node " + node.getNodeId() );	
 			
 		}catch(Exception ex){
-			
+			logger.warning("Error in creating edges for a node"+  node.getNodeId() + " . Error : " + ex);				
 		}
 		
 	}
@@ -82,17 +86,26 @@ public class GraphBuilderImpl implements GraphBuilder {
 	@Override
 	public void deleteNode(String nodeId) {
 		try{
+			logger.fine("Deleting a node "+ nodeId +" ...");	
 			graph.deleteNode(nodeId);
+			logger.fine("Deleted a node "+ nodeId);
 			
 		}catch(Exception ex){
-			
+			logger.warning("Error in deleting node " +nodeId + ". Error : " + ex);				
 		}		
+	
 	}
 
 	@Override
 	public void close() {
-		this.graph.close();
-		this.graph = null;
+		try{
+			logger.fine("Closing graph ...  " );	
+			this.graph.close();
+			this.graph = null;
+			logger.fine("Closed graph . " );
+		}catch(Exception ex){
+			logger.warning("Error in closing graph. Error : " + ex);			
+		}
 		
 	}
 
