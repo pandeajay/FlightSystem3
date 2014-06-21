@@ -4,23 +4,23 @@ import log.Log;
 
 public class Logger {
 	
-	private Logger logger = null;
+	private static Logger logger = null;
 	private Log logWriter = null;
-	protected Logger(){
-		
-	}
+	
+
 	
 	private Logger(){
 		
 	}
 	
 	public static Logger getLogger(){
-		logger = new Logger();
-		logWriter = new Log();
-		return logWriter
-		
-		
+		if(logger == null){
+			logger = new Logger();
+		}
+		return logger;	
 	}
+	
+	
 	static void init(java.util.logging.Logger logr){
 		if(logWriter != null){
 			return ;
