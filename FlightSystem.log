@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2014-06-21T17:30:30</date>
+  <millis>1403352030974</millis>
+  <sequence>0</sequence>
+  <logger>FlightSystemLogger</logger>
+  <level>FINE</level>
+  <class>log.impl.LogImpl</class>
+  <method>fine</method>
+  <thread>1</thread>
+  <message>Intializing GraphBuilderImpl ...</message>
+</record>
+<record>
+  <date>2014-06-21T17:30:34</date>
+  <millis>1403352034926</millis>
+  <sequence>1</sequence>
+  <logger>FlightSystemLogger</logger>
+  <level>FINE</level>
+  <class>log.impl.LogImpl</class>
+  <method>fine</method>
+  <thread>1</thread>
+  <message>Intialized GraphBuilderImpl.</message>
+</record>
+<record>
+  <date>2014-06-21T17:30:34</date>
+  <millis>1403352034926</millis>
+  <sequence>2</sequence>
+  <logger>FlightSystemLogger</logger>
+  <level>FINE</level>
+  <class>log.impl.LogImpl</class>
+  <method>fine</method>
+  <thread>1</thread>
+  <message>Buidling Graph...</message>
+</record>
+<record>
+  <date>2014-06-21T17:30:35</date>
+  <millis>1403352035748</millis>
+  <sequence>3</sequence>
+  <logger>FlightSystemLogger</logger>
+  <level>FINE</level>
+  <class>log.impl.LogImpl</class>
+  <method>fine</method>
+  <thread>1</thread>
+  <message>Closing graph ...  </message>
+</record>
+<record>
+  <date>2014-06-21T17:30:37</date>
+  <millis>1403352037408</millis>
+  <sequence>4</sequence>
+  <logger>FlightSystemLogger</logger>
+  <level>FINE</level>
+  <class>log.impl.LogImpl</class>
+  <method>fine</method>
+  <thread>1</thread>
+  <message>Closed graph . </message>
+</record>
+</log>
