@@ -1,8 +1,26 @@
 package utilities;
 
+import log.Log;
+
 public class Logger {
-	private static java.util.logging.Logger logWriter = null;
 	
+	private Logger logger = null;
+	private Log logWriter = null;
+	protected Logger(){
+		
+	}
+	
+	private Logger(){
+		
+	}
+	
+	public static Logger getLogger(){
+		logger = new Logger();
+		logWriter = new Log();
+		return logWriter
+		
+		
+	}
 	static void init(java.util.logging.Logger logr){
 		if(logWriter != null){
 			return ;
