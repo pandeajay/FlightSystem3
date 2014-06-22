@@ -1,7 +1,7 @@
 /**
  * 
 */
-package tests;
+
 
 import static org.junit.Assert.*;
 import graphs.Graph;
@@ -42,7 +42,7 @@ public class GraphTests {
 		//graph = new Jgraph();
 		//graph = new MyGraph();
 		String flightSystemsHome  = System.getenv("FlightSystems_Home");
-		pathForInputFile = flightSystemsHome + "\\FlightSystem\\user-files\\test.json";
+		pathForInputFile = flightSystemsHome + "\\FlightSystem3\\user-files\\test.json";
 		newNodesList = Utils.getAllNodesFromJson(pathForInputFile);
 	}
 
