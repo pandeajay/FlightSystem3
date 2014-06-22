@@ -32,9 +32,9 @@ public class MainNeoGraph {
 				String[] strs = str.split("-");
 				if (strs.length == 2) {
 
-					double weight = query.getShortestPathWeight(strs[0],
+					double weight = query.findShortestPathWeight(strs[0],
 							strs[1]);
-					List<?> edgeList = query.getShortestPathVetices(strs[0],
+					List<?> edgeList = query.findShortestPathVertices(strs[0],
 							strs[1]);
 					Iterator<?> it = edgeList.iterator();
 					String shortestPath = "";

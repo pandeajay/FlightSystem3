@@ -4,17 +4,11 @@ import graphs.Graph;
 import graphs.impl.Jgraph;
 import graphs.impl.NeoGraph;
 import graphs.impl.NeoGraphRest;
-
 import java.util.List;
 import java.util.Map;
-
 import log.impl.LogImpl;
-
-import org.jgraph.JGraph;
-
 import utilities.Logger;
 import utilities.Utils;
-import business.Edge;
 import business.GraphBuilder;
 import business.Node;
 
