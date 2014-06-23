@@ -3,8 +3,6 @@
  */
 package business;
 
-import java.util.List;
-
 import graphs.Graph;
 
 /**
@@ -12,11 +10,11 @@ import graphs.Graph;
  *
  */
 public interface GraphBuilder {
-	public boolean initialize() throws Exception ;
-	public void buildGraph();
-	public void addNode(Node node );	
-	public void createEdgesForNode(Node node );
-	public void deleteNode(String nodeId );
-	public Graph getGraph();
-	public void close();
+	boolean initialize() throws Exception ;
+	void buildGraph();
+	void addNode(Node node );	
+	void createEdgesForNode(Node node );
+	void deleteNode(String nodeId );
+	Graph getGraph();
+	void close();
 }
