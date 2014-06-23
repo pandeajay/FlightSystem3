@@ -3,14 +3,14 @@ package utilities;
 import log.Log;
 
 public class Logger {
-	
+
 	private static Logger logger = null;
 	private static Log logWriter = null;
-	
+
 	private Logger(){
-		
+
 	}
-	
+
 	public static Logger getLogger(Log log){
 		if(logger == null){
 			logger = new Logger();
@@ -22,7 +22,7 @@ public class Logger {
 	public void fine(String msg){		
 		logWriter.fine(msg);
 	}	
-	
+
 	public void info(String msg){
 		logWriter.info(msg);
 	}

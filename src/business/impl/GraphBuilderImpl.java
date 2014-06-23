@@ -13,17 +13,17 @@ import business.GraphBuilder;
 import business.Node;
 
 public class GraphBuilderImpl implements GraphBuilder {
-	
+
 	private Graph graph = null;	
 	private Logger logger = Logger.getLogger(new LogImpl());
 
 	public boolean initialize() throws Exception{			
 		logger.fine("Intializing GraphBuilderImpl ...");		
-		
+
 		if(this.graph != null){			
 			throw new Exception ("Graph already initialized");
 		}
-		
+
 		String graphStyle = Utils.getDataNodesFile().get("Graph-Style");
 		if(graphStyle.equals("NeoGraph")){
 			this.graph  = new NeoGraph();
@@ -32,7 +32,7 @@ public class GraphBuilderImpl implements GraphBuilder {
 		}else if(graphStyle.equals("JGraph")){
 			this.graph  = new Jgraph();
 		}		
-		
+
 		logger.fine("Intialized GraphBuilderImpl.");		
 		return true;		
 	}
@@ -70,11 +70,11 @@ public class GraphBuilderImpl implements GraphBuilder {
 			logger.fine("Creating edges for a node " + node.getNodeId() + " ...");	
 			graph.addEdge(node);
 			logger.fine("Created edges for a node " + node.getNodeId() );	
-			
+
 		}catch(Exception ex){
 			logger.warning("Error in creating edges for a node"+  node.getNodeId() + " . Error : " + ex);				
 		}
-		
+
 	}
 
 	@Override
@@ -83,11 +83,11 @@ public class GraphBuilderImpl implements GraphBuilder {
 			logger.fine("Deleting a node "+ nodeId +" ...");	
 			graph.deleteNode(nodeId);
 			logger.fine("Deleted a node "+ nodeId);
-			
+
 		}catch(Exception ex){
 			logger.warning("Error in deleting node " +nodeId + ". Error : " + ex);				
 		}		
-	
+
 	}
 
 	@Override
@@ -100,7 +100,7 @@ public class GraphBuilderImpl implements GraphBuilder {
 		}catch(Exception ex){
 			logger.warning("Error in closing graph. Error : " + ex);			
 		}
-		
+
 	}
 
 	@Override
